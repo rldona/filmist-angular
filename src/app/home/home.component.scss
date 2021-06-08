@@ -1,0 +1,45 @@
+.home-component {
+	background: #101010;
+	padding-bottom: 1rem;
+	section.first {
+		padding-top: 1rem;
+	}
+	section.movies-genres {
+		background: #111;
+		padding: 0rem 0 1rem;
+	}
+	.title {
+		font-size: 20px;
+		color: #CCC;
+		margin-bottom: 1rem;
+		padding-left: 10px;
+		position: relative;
+		span {
+			color: #FFF;
+			font-size: 40px;
+		}
+		i {
+			font-size: 30px;
+			position: absolute;
+			left: 10px;
+			top: 17px;
+		}
+	}
+}
+@media (min-width: 767px) {
+	.home-component {
+		section.first {
+			padding-top: 2rem;
+		}
+		section {
+			padding: 0;
+		}
+		section.movies-genres {
+			padding: 2rem 0 3rem;
+		}
+		.title {
+			padding-left: 30px;
+			font-size: 25px;
+		}
+	}
+}
