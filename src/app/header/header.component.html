@@ -1,0 +1,94 @@
+<div class="header-component">
+    <div class="container">
+        <div class="menu opt-box" (click)="showMenuAside()">
+            <i class="material-icons toCenter">menu</i>
+        </div>
+        <h1 class="logo opt-box" (click)="navigateTo('home')">Filmist</h1>
+        <div class="version">V12</div>
+        <!--<div class="options login opt-box" (click)="showMenuOptions()" *ngIf="!showMiniLogin">-->
+        <div class="options login opt-box" routerLink="/login" *ngIf="!showMiniLogin">
+            <i class="material-icons">vpn_key</i>
+            <p *ngIf="!showOptions">Iniciar sesión</p>
+        </div>
+        <div class="options identity mini opt-box" routerLink="/login" *ngIf="!showMiniLogin">
+            <i class="material-icons toCenter">perm_identity</i>
+        </div>
+        <div class="options opt-box" (click)="showMenuOptions()" *ngIf="showMiniLogin">
+            <i class="material-icons toCenter">more_vert</i>
+        </div>
+        <div class="options mini opt-box" (click)="showBigSearch()">
+            <i class="material-icons toCenter">search</i>
+        </div>
+        <div class="search">
+            <i class="material-icons search-icon">search</i>
+            <input [(ngModel)]="query" type="text" placeholder="{{ 'SEARCH-PLACEHOLDER' | translate }}" (click)="showBigSearch()" (keypress)="searchTitle($event)" />
+        </div>
+        <div
+            class="menu-options" [ngClass]="{ 'show' : showOptions }">
+            <ul *ngIf="showMiniLogin">
+                <li class="languages-title" style="color: #FFF; font-size: 16px; padding: 1.5rem 2rem; background: #111; border-bottom: 1px solid #222; cursor: inherit; display: flex; align-items: center;">
+                    <img [src]="settings?.avatar?.uri" style="width: 80px; height: 80px; border-radius: 5px; margin-left: 0;" *ngIf="settings?.avatar?.uri" />
+                    <div style="width: 80px; height: 80px; border-radius: 5px; margin-left: 0; background: #13221b;" *ngIf="!settings?.avatar?.uri"></div>
+                    <div style="margin-left: 15px;">
+                        <p style="font-size: 15px; margin-bottom: 5px;">{{user?.displayName}}</p>
+                        <p style="font-size: 13px; font-weight: 300; color: #AAA;">{{user?.email}}</p>
+                    </div>
+                </li>
+                <li class="languages-title" style="background: #111; cursor: inherit;">{{ 'CHOOSE-LANGUAGE-CONTENT' | translate }}:</li>
+                <li class="languages" style="background: #111; cursor: inherit;">
+                    <span [ngClass]="{ 'active' : languageES }" (click)="activeLanguage('es')">ES</span>
+                    <span [ngClass]="{ 'active' : languageEN }" (click)="activeLanguage('en')">EN</span>
+                    <span [ngClass]="{ 'active' : languageFR }"
+                        (click)="activeLanguage('fr')">FR</span>
+                </li>
+                <li class="close-session" style="color: #999; text-align: center; background: rgba(47, 175, 118, 0.13); padding-bottom: 1rem; margin: 1rem;" (click)="logout()">
+                    <span>{{ 'LOGOUT' | translate }}</span>
+                </li>
+            </ul>
+            <ul *ngIf="!showMiniLogin">
+                <li class="languages-title" style="color: #999; font-size: 16px; padding: 1rem 2rem 1.5rem; background: #171717; cursor: inherit;">
+                    <img src="./assets/img/logo.png" style="width: 80px; margin-left: -15px;" />
+                    <p style="font-size: 25px; color: #FFF; margin-bottom: 5px;">{{ 'WELCOME-TITLE' | translate }}</p>
+                    <p style="font-size: 16px; color: #AAA; margin-bottom: 0; font-weight: 300; width: 250px;">{{ 'WELCOME-SUBTITLE' | translate }}</p>
+                </li>
+                <li class="close-session" style="color: #FFF; text-align: center; font-size: 16px; font-weight: 300; background: #24b372; padding-bottom: 1rem; margin: 1rem;" (click)="login()">
+                    <span>{{ 'LOGIN-FILMIST' | translate }}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="menu-options-velo" [ngClass]="{ 'show' : showOptions }" (click)="close()"></div>
+    </div>
+    <div class="menu-big" [ngClass]="{ 'show' : showBigMenu }" (click)="close()">
+        <ul class="toCenter">
+            <!--<li><img src="./assets/img/logo.png" /><h2 style="margin-top: -25px; margin-bottom: 5px; letter-spacing: 2px; padding-bottom: 15px;">Filmist</h2></li>-->
+            <li id="menu-item-1" class="animated slideInUp" [routerLink]="['/lists']" (click)="close()">{{ 'CINEMA-LISTINGS' | translate}}</li>
+            <li id="menu-item-2" class="animated slideInUp" [routerLink]="['/favorites']" (click)="close()">Favoritos</li>
+            <li id="menu-item-2" class="animated slideInUp" [routerLink]="['/genres']" (click)="close()">{{ 'GENRES' | translate}}</li>
+        </ul>
+    </div>
+    <div class="menu-aside" [ngClass]="{ 'show' : showMenu }" (click)="close()">
+        <ul>
+            <li [routerLink]="['']" style="background-color: #24b372;">
+                <img src="./assets/img/logo.png" style="width: 100px;" />
+                <h2 style="margin-top: -10px; margin-bottom: 5px; letter-spacing: 2px;">Filmist</h2>
+            </li>
+            <li [routerLink]="['']" (click)="close()">{{ 'CINEMA-LISTINGS' | translate}}</li>
+            <li [routerLink]="['/genres']">{{ 'GENRES' | translate}}</li>
+            <li [routerLink]="['/search']">Search</li>
+        </ul>
+        <i class="material-icons close-icon close" (click)="close()">close</i>
+    </div>
+    <div class="menu-options-aside" [ngClass]="{ 'show' : showMenu }" (click)="close()"></div>
+    <div class="big-search" [ngClass]="{ 'show' : showBS }">
+        <div class="toCenter_ container">
+            <span>{{ 'SEARCH' | translate}}</span>
+            <input type="text" [(ngModel)]="query" id="bigSearchInput" (ngModelChange)="searchTitle($event)" (keypress)="searchEnter($event)"/>
+            <i class="material-icons close-icon close" (click)="close()">close</i>
+            <div class="results">
+                <ul>
+                    <li *ngFor="let movie of resultsSearch" class="transition" (click)="loadMovieSearch(movie)">{{ movie?.title || movie?.name }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

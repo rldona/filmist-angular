@@ -1,80 +1,226 @@
-// RESET //
+/********* # RESET # *********/
 
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
+/* You can add global styles to this file, and also import other style files */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
 
-/* Remove default padding */
-ul[class],
-ol[class] {
-	padding: 0;
-}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
 
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-ul[class],
-ol[class],
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-	margin: 0;
-}
-
-/* Set core body defaults */
 body {
-	min-height: 100vh;
-	scroll-behavior: smooth;
-	text-rendering: optimizeSpeed;
-	line-height: 1.5;
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+/********* # RESET # *********/
+
+body {
+	font-family: 'Roboto', Arial, sans-serif;
+	font-weight: 300;
+	font-size: .875rem;
+	line-height: 1.4285714286;
+	color: #FFF;
+	background: #0d0d0d;
+	padding-top: 52px;
+	&.block {
+		overflow: hidden;
+	}
 }
 
-/* Remove list styles on ul, ol elements with a class attribute */
-ul[class],
-ol[class] {
-	list-style: none;
+.loading {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99999999;
+	i {
+		display: block;
+		font-size: 100px;
+		color: #24b372;
+		text-align: center;
+	}
+	h2 {
+		font-size: 30px;
+		font-weight: 600;
+		text-align: center;
+		text-transform: uppercase;
+		color: #FFF;
+	}
+	.toCenter {
+		img {
+			width: 130px;
+		}
+		h2 {
+			font-size: 18px;
+			letter-spacing: 3px;
+			margin-top: -10px;
+		}
+	}
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-	text-decoration-skip-ink: auto;
+.container {
+	clear: both;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	position: relative;
 }
 
-/* Make images easier to work with */
-img {
-	max-width: 100%;
-	display: block;
+.movies-grid {
+	overflow: hidden;
+	margin-bottom: 3rem;
+	li {
+		float: left;
+		width: 100%;
+		padding: 0 1rem 1rem;
+		&:last-child {
+			padding: 0 1rem 1rem;
+		}
+	}
 }
 
-/* Natural flow and rhythm in articles by default */
-article > * + * {
-	margin-top: 1em;
+.toCenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-	font: inherit;
+.toCenterFixed {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-	* {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-		scroll-behavior: auto !important;
+.see-detail {
+	position: absolute;
+	top: 1rem;
+	z-index: 99;
+	width: 50px;
+	right: 1rem;
+	background: rgba(255, 255, 255, 0.9);
+	padding: 10px;
+	color: #111;
+	border-radius: 50%;
+	text-align: center;
+	font-size: 14px;
+	height: 50px;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+	i {
+		font-size: 30px;
+	}
+}
+
+.see-detail.item {
+	bottom: 7rem;
+	display: none;
+}
+
+.transition {
+	-webkit-transition: all ease-in-out 0.15s;
+	transition: all ease-in-out 0.15s;
+}
+
+@media (min-width: 767px) {
+	.loading {
+		.toCenter {
+			img {
+				width: 160px;
+			}
+			h2 {
+				font-size: 24px;
+			}
+		}
+	}
+	.movies-grid {
+		li {
+			width: 33.3333333%;
+		}
+	}
+	.see-detail {
+		top: 1rem;
+		left: initial;
+		right: 1rem;
+	}
+}
+
+@media (min-width: 480px) {
+	.movies-grid {
+		li {
+			&:last-child {
+				padding: 1rem 1.555%;
+			}
+			width: 50%;
+			padding: 1rem 1.555%;
+		}
+	}
+	.see-detail.item {
+		display: block;
+		top: 13rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.movies-grid {
+		li {
+			width: 20%;
+		}
+	}
+	.see-detail.item {
+		display: none;
+	}
+}
+
+@media (min-width: 1025px) {
+	.see-detail {
+		display: none;
 	}
 }

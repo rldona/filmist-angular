@@ -68,11 +68,12 @@ export class HomeComponent implements OnInit {
 
     // apply resolve home
     this.lists = this._route.snapshot.data['home'];
+
+    console.log(this.lists);
   }
 
   reloadLists() {
     this._dbmoviesService.getTop('now_playing', 'movie').then((res) => {
-      console.log(res);
       this.lists[0] = res;
     }).catch((_error) => {
       // console.log(error);

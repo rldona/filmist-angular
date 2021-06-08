@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -12,12 +13,13 @@ import { AppRoutingModule } from './app-routing.module';
 // components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
 
 // services
 import { UserService } from './user.service';
-// import { FirebaseService } from './firebase.service';
- import { DbmoviesService } from './dbmovies.service';
-// import { ScreenService } from './screen.service';
+import { FirebaseService } from './firebase.service';
+import { DbmoviesService } from './dbmovies.service';
+import { ScreenService } from './screen.service';
 
 // resolves
 import { HomeResolve } from './home/home.resolve';
@@ -28,7 +30,7 @@ import { HomeCanActivate } from './home/home.canActivate';
 // consts
 export const stateComponents = [
   AppComponent,
-  // HeaderComponent,
+  HeaderComponent,
   // LoadingComponent,
   // MovieListComponent,
   // MovieItemComponent,
@@ -53,9 +55,9 @@ export const pipes = [
 
 export const services = [
   UserService,
-  // FirebaseService,
+  FirebaseService,
   DbmoviesService,
-  // ScreenService
+  ScreenService
 ];
 
 export const resolves = [
@@ -89,6 +91,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
