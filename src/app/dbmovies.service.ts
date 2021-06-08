@@ -268,7 +268,7 @@ export class DbmoviesService {
 
     try {
       const response: any = await this.http.get(top).toPromise();
-      return response.json();
+      return response;
     } catch (error) {
       return console.log(error);
     }
