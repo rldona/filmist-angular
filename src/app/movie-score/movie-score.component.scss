@@ -1,0 +1,66 @@
+.movie-score-component {
+  background: #101010;
+}
+.movie-score-component h2 {
+  position: relative;
+  z-index: 9;
+  font-size: 14px;
+  display: none;
+}
+@media (min-width: 767px) {
+  .movie-score-component h2 {
+      position: absolute;
+      top: 22px;
+      left: 270px;
+      z-index: 9;
+      font-size: 25px;
+ }
+}
+@media (min-width: 1024px) {
+  .movie-score-component h2 {
+      display: block;
+ }
+}
+@media (min-width: 1200px) {
+  .movie-score-component h2 {
+      left: 285px;
+ }
+}
+.movie-score-component h3 {
+  font-size: 30px;
+  text-align: center;
+  padding: 6px;
+  float: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  min-width: 100px;
+}
+@media (min-width: 767px) {
+  .movie-score-component h3 {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      font-size: 45px;
+      padding-right: 2rem;
+      text-align: right;
+ }
+}
+.movie-score-component h3.positive {
+  background: rgba(36, 179, 114, 0.9);
+}
+.movie-score-component h3.neutral {
+  background: rgba(255, 152, 0, 0.9);
+}
+.movie-score-component h3.negative {
+  background: rgba(244, 67, 54, 0.9);
+}
+.movie-score-component h3 i {
+  font-size: 22px;
+  text-align: center;
+}
+@media (min-width: 767px) {
+  .movie-score-component h3 i {
+      font-size: 35px;
+ }
+}

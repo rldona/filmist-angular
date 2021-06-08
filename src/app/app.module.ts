@@ -14,6 +14,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
+import { MovieFeaturedComponent } from './movie-featured/movie-featured.component';
+import { MovieScoreComponent } from './movie-score/movie-score.component';
 
 // services
 import { UserService } from './user.service';
@@ -34,8 +36,8 @@ export const stateComponents = [
   // LoadingComponent,
   // MovieListComponent,
   // MovieItemComponent,
-  // MovieFeaturedComponent,
-  // MovieScoreComponent,
+  MovieFeaturedComponent,
+  MovieScoreComponent,
   // ResultListComponent,
   // GenreListComponent
 ];
