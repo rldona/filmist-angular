@@ -1,0 +1,17 @@
+<div class="movie-featured-component" (click)="loadDetail(movie)" [ngClass]="{ 'without-cursor-pointer' : options.detail }">
+	<div class="see-detail" *ngIf="options.seeDetail">
+		<i class="material-icons">touch_app</i>
+	</div>
+	<div class="featured" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/' + backdropSize + movie?.backdrop_path + ')', 'background-size': 'cover'}">
+		<div class="title-mobile" *ngIf="options.title">
+			<p>{{ movie?.title || movie?.name }}</p>
+		</div>
+	</div>
+	<div class="container">
+		<div class="details">
+			<div class="poster" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/' + posterSize + movie?.poster_path + ')', 'background-size': 'cover'}"></div>
+			<fm-movie-score [title]="movie?.title" [score]="movie?.vote_average"></fm-movie-score>
+			<h2 *ngIf="options.seeDetail">Ver detalle</h2>
+		</div>
+	</div>
+</div>

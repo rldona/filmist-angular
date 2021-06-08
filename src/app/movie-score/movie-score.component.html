@@ -1,0 +1,18 @@
+<div class="movie-score-component">
+	<h2>{{ title }} </h2>
+	<div *ngIf="score < 5">
+		<h3 class="negative">
+			<i class="material-icons thumb_up">thumb_down</i> {{ score }}
+		</h3>
+	</div>
+	<div *ngIf="score === 5">
+		<h3 class="neutral">
+			<i class="material-icons\">thumbs_up_down</i> {{ score }}
+		</h3>
+	</div>
+	<div *ngIf="score > 5">
+		<h3 class="positive">
+			<i class="material-icons thumb_up">thumb_up</i> {{ score }}
+		</h3>
+	</div>
+</div>
