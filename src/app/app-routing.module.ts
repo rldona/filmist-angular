@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-// import { SearchComponent } from './search/search.component';
 import { HomeComponent } from './home/home.component';
 import { DetailComponent } from './detail/detail.component';
+import { SearchComponent } from './search/search.component';
 import { TopListComponent } from './top-list/top-list.component';
 import { GenresComponent } from './genres/genres.component';
 import { VideoGenreComponent } from './video-genre/video-genre.component';
@@ -16,7 +16,7 @@ import { ActorDetailComponent } from './actor-detail/actor-detail.component';
 
 import { HomeResolve } from './home/home.resolve';
 import { FavoritesComponent } from './favorites/favorites.component';
-// import { SearchResolve } from './search/search.resolve';
+import { SearchResolve } from './search/search.resolve';
 import { DetailResolve } from './detail/detail.resolve';
 import { GenresResolve } from './genres/genres.resolve';
 import { MovieGenreResolve } from './video-genre/video-genre.resolve';
@@ -72,13 +72,13 @@ const routes: Routes = [
     }
   },
 
-  // {
-  //   path: 'search/:title',
-  //   component: SearchComponent,
-  //   resolve: {
-  //     search: SearchResolve
-  //   }
-  // },
+  {
+    path: 'search/:title',
+    component: SearchComponent,
+    resolve: {
+      search: SearchResolve
+    }
+  },
 
   {
     path: 'movies/:id',

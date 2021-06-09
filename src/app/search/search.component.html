@@ -1,0 +1,35 @@
+<fm-header></fm-header>
+
+<div class="search-component">
+	<div class="result">
+		<div class="container">
+			<p>{{ title }}</p>
+			<h2 *ngIf="list.length * totalPages > 0">{{ list.length * totalPages }} {{ 'RESULT' | translate}}
+				<span *ngIf="list.length * totalPages > 1">s</span>
+				<span *ngIf="list.length * totalPages >= 1">{{ totalPages }}</span> {{ 'PAGE' | translate}}
+				<span *ngIf="totalPages > 1">s</span>
+			</h2>
+		</div>
+	</div>
+	<div class="container" infinite-scroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="150" (scrolled)="onScrollDown()">
+		<div class="movies-grid" *ngIf="list?.length > 0">
+			<ul>
+				<li *ngFor="let movie of list">
+					<fm-movie-item [movie]="movie"></fm-movie-item>
+				</li>
+			</ul>
+		</div>
+		<div class="no-results" *ngIf="list?.length === 0">
+			<h2>{{ 'NO-RESULTS-FOUND' | translate }}</h2>
+		</div>
+	</div>
+	<div class="no-more-results" *ngIf="showNoMoreResults"> {{ 'NO-MORE-RESULTS' | translate }} </div>
+	<section class="pager-container">
+		<div class="pager" *ngIf="totalPages > 1">
+			<p class="text"> {{ pageServer }} / {{ totalPages }} </p>
+			<p class="return" (click)="upReturn()" *ngIf="page > 2">
+				<i class="material-icons">file_upload</i>
+			</p>
+		</div>
+	</section>
+</div>

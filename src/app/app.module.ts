@@ -27,7 +27,7 @@ import { ActorDetailComponent } from './actor-detail/actor-detail.component';
 
 // State Components
 import { HomeComponent } from './home/home.component';
-// import { SearchComponent } from './search/search.component';
+import { SearchComponent } from './search/search.component';
 import { DetailComponent } from './detail/detail.component';
 import { GenresComponent } from './genres/genres.component';
 import { VideoGenreComponent } from './video-genre/video-genre.component';
@@ -41,7 +41,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
 
 // Resolves
 import { HomeResolve } from './home/home.resolve';
-// import { SearchResolve } from './search/search.resolve';
+import { SearchResolve } from './search/search.resolve';
 import { DetailResolve } from './detail/detail.resolve';
 import { GenresResolve } from './genres/genres.resolve';
 import { MovieGenreResolve } from './video-genre/video-genre.resolve';
@@ -68,13 +68,11 @@ import { RuntimeConvertPipe } from './detail/multiplicador.pipe';
 // import { RememberComponent } from './remember/remember.component';
 import { TopListComponent } from './top-list/top-list.component';
 
-
-
 // consts
 export const stateComponents = [
+  // LoadingComponent,
   AppComponent,
   HeaderComponent,
-  // LoadingComponent,
   MovieListComponent,
   MovieItemComponent,
   MovieFeaturedComponent,
@@ -93,13 +91,13 @@ export const stateComponents = [
 ];
 
 export const routesComponents = [
+  // LoginComponent
   HomeComponent,
-  // SearchComponent,
+  SearchComponent,
   DetailComponent,
   GenresComponent,
   ActorDetailComponent,
   FavoritesComponent
-  // LoginComponent
 ];
 
 export const pipes = [
@@ -115,7 +113,7 @@ export const services = [
 
 export const resolves = [
   HomeResolve,
-  // SearchResolve,
+  SearchResolve,
   DetailResolve,
   GenresResolve,
   MovieGenreResolve,
