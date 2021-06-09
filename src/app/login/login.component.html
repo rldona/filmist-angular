@@ -1,0 +1,28 @@
+<div class="login-component" style="background: url('./assets/img/bg-pattern.jpg');">
+	<section class="box">
+		<div class="welcome">
+			<img src="./assets/img/logo.png" style="width: 100px;" />
+			<h2>{{ 'WELCOME-TITLE' | translate }}</h2>
+			<h3>{{ 'WELCOME-SUBTITLE' | translate }}</h3>
+		</div>
+		<div class="login">
+			<!--<button (click)="loginGoogle()" class="btn"><img src="./assets/img/g-logo.png" /><span>{{ 'LOGIN-GOOGLE' | translate }}</span></button>-->
+			<!--<p class="separator">ó</p>-->
+			<form #f="ngForm" (ngSubmit)="loginFilmist(f.value)" class="form">
+				<div class="row_">
+					<input type="email" id="email" name="email" placeholder="Email" ngModel />
+					<input type="password" id="password" name="password" placeholder="Contraseña" ngModel />
+				</div>
+				<button type="submit" class="btn-filmist">
+					<span>{{ 'LOGIN-FILMIST' | translate }}</span>
+				</button>
+				<a (click)="remember()" class="btn-filmist-link clear">
+					<span>{{ 'REMEMBER-FILMIST' | translate }}</span>
+				</a>
+				<a (click)="register()" class="btn-filmist-link clear">
+					<span>{{ 'REGISTER-FILMIST' | translate }}</span>
+				</a>
+			</form>
+		</div>
+	</section>
+</div>

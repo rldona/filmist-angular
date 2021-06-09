@@ -1,0 +1,172 @@
+.windows8 {
+  position: relative;
+  width: 78px;
+  height: 78px;
+  margin: auto;
+}
+.windows8 .wBall {
+  position: absolute;
+  width: 74px;
+  height: 74px;
+  opacity: 0;
+  transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  animation: orbit 3.6325s infinite;
+  -o-animation: orbit 3.6325s infinite;
+  -ms-animation: orbit 3.6325s infinite;
+  -webkit-animation: orbit 3.6325s infinite;
+  -moz-animation: orbit 3.6325s infinite;
+}
+.windows8 .wBall .wInnerBall {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  left: 0px;
+  top: 0px;
+  border-radius: 10px;
+}
+.windows8 #wBall_1 {
+  animation-delay: 0.796s;
+  -o-animation-delay: 0.796s;
+  -ms-animation-delay: 0.796s;
+  -webkit-animation-delay: 0.796s;
+  -moz-animation-delay: 0.796s;
+}
+.windows8 #wBall_2 {
+  animation-delay: 0.153s;
+  -o-animation-delay: 0.153s;
+  -ms-animation-delay: 0.153s;
+  -webkit-animation-delay: 0.153s;
+  -moz-animation-delay: 0.153s;
+}
+.windows8 #wBall_3 {
+  animation-delay: 0.3165s;
+  -o-animation-delay: 0.3165s;
+  -ms-animation-delay: 0.3165s;
+  -webkit-animation-delay: 0.3165s;
+  -moz-animation-delay: 0.3165s;
+}
+.windows8 #wBall_4 {
+  animation-delay: 0.4695s;
+  -o-animation-delay: 0.4695s;
+  -ms-animation-delay: 0.4695s;
+  -webkit-animation-delay: 0.4695s;
+  -moz-animation-delay: 0.4695s;
+}
+.windows8 #wBall_5 {
+  animation-delay: 0.633s;
+  -o-animation-delay: 0.633s;
+  -ms-animation-delay: 0.633s;
+  -webkit-animation-delay: 0.633s;
+  -moz-animation-delay: 0.633s;
+}
+@keyframes orbit {
+  0% {
+      opacity: 1;
+      z-index: 99;
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+ }
+  7% {
+      opacity: 1;
+      -webkit-transform: rotate(300deg);
+      transform: rotate(300deg);
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      origin: 0%;
+ }
+  30% {
+      opacity: 1;
+      -webkit-transform: rotate(410deg);
+      transform: rotate(410deg);
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+      origin: 7%;
+ }
+  39% {
+      opacity: 1;
+      -webkit-transform: rotate(645deg);
+      transform: rotate(645deg);
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      origin: 30%;
+ }
+  70% {
+      opacity: 1;
+      -webkit-transform: rotate(770deg);
+      transform: rotate(770deg);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+      origin: 39%;
+ }
+  75% {
+      opacity: 1;
+      -webkit-transform: rotate(900deg);
+      transform: rotate(900deg);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+      origin: 70%;
+ }
+  76% {
+      opacity: 0;
+      -webkit-transform: rotate(900deg);
+      transform: rotate(900deg);
+ }
+  100% {
+      opacity: 0;
+      -webkit-transform: rotate(900deg);
+      transform: rotate(900deg);
+ }
+}
+@-webkit-keyframes orbit {
+  0% {
+      opacity: 1;
+      z-index: 99;
+      -webkit-transform: rotate(180deg);
+      -webkit-animation-timing-function: ease-out;
+ }
+  7% {
+      opacity: 1;
+      -webkit-transform: rotate(300deg);
+      -webkit-animation-timing-function: linear;
+      -webkit-origin: 0%;
+ }
+  30% {
+      opacity: 1;
+      -webkit-transform: rotate(410deg);
+      -webkit-animation-timing-function: ease-in-out;
+      -webkit-origin: 7%;
+ }
+  39% {
+      opacity: 1;
+      -webkit-transform: rotate(645deg);
+      -webkit-animation-timing-function: linear;
+      -webkit-origin: 30%;
+ }
+  70% {
+      opacity: 1;
+      -webkit-transform: rotate(770deg);
+      -webkit-animation-timing-function: ease-out;
+      -webkit-origin: 39%;
+ }
+  75% {
+      opacity: 1;
+      -webkit-transform: rotate(900deg);
+      -webkit-animation-timing-function: ease-out;
+      -webkit-origin: 70%;
+ }
+  76% {
+      opacity: 0;
+      -webkit-transform: rotate(900deg);
+ }
+  100% {
+      opacity: 0;
+      -webkit-transform: rotate(900deg);
+ }
+}

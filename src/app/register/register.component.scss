@@ -1,0 +1,90 @@
+.register-component {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+.register-component .welcome .arrow-back {
+  font-size: 30px;
+  margin: 10px 0 20px -5px;
+  cursor: pointer;
+}
+.register-component .box {
+  padding: 20px 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 450px;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  background: rgba(34, 34, 34, 0.7);
+  border-radius: 10px;
+}
+.register-component .box h2 {
+  font-size: 25px;
+  text-align: left;
+  margin-bottom: 30px;
+}
+.register-component .box h3 {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.register-component .box .btn-filmist {
+  background: #22b573;
+  border: 1px solid #22b573;
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+.register-component .box .btn-filmist.clear {
+  background: transparent;
+  margin-top: 20px;
+}
+.register-component .box .btn-filmist.clear span {
+  color: #22b573;
+}
+.register-component .box .btn-filmist span {
+  font-size: 16px;
+  color: #FFF;
+}
+.register-component .box .form {
+  margin-bottom: 1rem;
+}
+.register-component .box .form .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.register-component .box .form input {
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  font-size: 14px;
+  margin-bottom: 20px;
+  outline: none;
+}
+.register-component .box .form p {
+  margin: 30px 0 10px;
+  text-align: center;
+}
+.register-component .box .form .btn-filmist-link {
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: underline;
+}
