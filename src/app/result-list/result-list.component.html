@@ -1,0 +1,30 @@
+<div class="result-list-component">
+	<div class="result" *ngIf="!hideGenre">
+		<div class="container">
+			<p>
+				<span *ngIf="!hideByCollection">{{ titleType }}</span>
+				<span>{{ title || genre.name }}</span>
+			</p>
+			<h2>{{ list.results.length * list.total_pages }} {{ 'RESULTS' | translate}} / {{ list.total_pages }} {{ 'PAGES' | translate}}</h2>
+		</div>
+	</div>
+	<div class="container" infiniteScroll [infiniteScrollDistance]="3" [infiniteScrollThrottle]="150" (scrolled)="onScrollDown()">
+		<ul class="movies-grid" *ngIf="list.results?.length > 0">
+			<li *ngFor="let movie of list.results">
+				<fm-movie-item [movie]="movie"></fm-movie-item>
+			</li>
+		</ul>
+		<div class="no-results" *ngIf="list.results?.length === 0">
+			<h2>{{ 'NO-RESULTS-FOUND' | translate}}</h2>
+		</div>
+	</div>
+	<div class="no-more-results" *ngIf="showNoMoreResults" [ngClass]="{ 'with-pager' : list.total_pages >= 2 }"> {{ 'NO-MORE-RESULTS' | translate}} </div>
+	<section class="pager-container">
+		<div class="pager" *ngIf="list.total_pages > 1">
+			<p class="text"> {{ pageServer }} / {{ list.total_pages }} </p>
+			<p class="return" (click)="upReturn()" *ngIf="page > 2">
+				<i class="material-icons">file_upload</i>
+			</p>
+		</div>
+	</section>
+</div>

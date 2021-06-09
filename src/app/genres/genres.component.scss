@@ -1,0 +1,85 @@
+.genres-component {
+  background: #101010;
+  padding-bottom: 2rem;
+
+  .genre-select {
+    background: #171717;
+    padding: 2rem;
+
+    h2 {
+      font-size: 17px;
+      margin-bottom: 2rem;
+    }
+
+    .container {
+      max-width: 1150px;
+    }
+
+    .select-component {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+
+      div {
+        padding: 1rem;
+        border: 1px solid #333;
+        text-align: center;
+        color: #555;
+        width: 50%;
+        cursor: pointer;
+
+        &.genre-movie-select, &.genre-tv-select {
+          border: 1px solid #24b372;
+          color: #24b372;
+        }
+      }
+    }
+  }
+
+  .movies-genres h2 {
+    font-size: 18px;
+    margin: 2rem 25px 1.5rem;
+    padding: 5px 0;
+  }
+}
+
+@media (min-width: 767px) {
+  .genres-component {
+    padding-bottom: 25rem;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 767px) {
+  .genres-component .genre-select {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (min-width: 767px) {
+  .genres-component .genre-select h2 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 480px) {
+  .genres-component .genre-select .select-component {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 767px) {
+  .genres-component .genre-select .select-component div {
+    width: 100%;
+    max-width: 190px;
+  }
+}
