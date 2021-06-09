@@ -1,0 +1,15 @@
+<fm-header></fm-header>
+<section class="actor-detail-component">
+  <div class="container">
+    <article class="actor-info"><img [src]="'https://image.tmdb.org/t/p/w132_and_h132_bestv2/' + actorDetail?.profile_path" />
+      <h2>{{ actorDetail?.name }}</h2>
+      <!--<p>{{ actorDetail?.biography }}</p>-->
+      <p>{{ actorDetail?.place_of_birth }}</p>
+      <!--<p>{{ actorDetail?.birthday }}</p>     <p>{{ actorDetail?.popularity }}</p>-->
+      <p style="font-size: 22; color: #666; font-weight: 400; margin: 10px 0; border-top: 1px solid #222; padding-top: 10px;">
+          {{movieList?.total_results}} resultados
+      </p>
+    </article>
+  </div>
+  <fm-result-list [list]="movieList" [id]="actorDetail.id" [serviceMethod]="'getListByActor'" [hideGenre]=true></fm-result-list>
+</section>

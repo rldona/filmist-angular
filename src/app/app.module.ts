@@ -30,7 +30,7 @@ import { HomeComponent } from './home/home.component';
 import { DetailComponent } from './detail/detail.component';
 import { GenresComponent } from './genres/genres.component';
 import { VideoGenreComponent } from './video-genre/video-genre.component';
-// import { ActorDetailComponent } from './actor-detail/actor-detail.component';
+import { ActorDetailComponent } from './actor-detail/actor-detail.component';
 
 // Services
 import { UserService } from './user.service';
@@ -44,7 +44,7 @@ import { HomeResolve } from './home/home.resolve';
 import { DetailResolve } from './detail/detail.resolve';
 import { GenresResolve } from './genres/genres.resolve';
 import { MovieGenreResolve } from './video-genre/video-genre.resolve';
-// import { ActorDetailResolve } from './actor-detail/actor-detail.resolve';
+import { ActorDetailResolve } from './actor-detail/actor-detail.resolve';
 
 // Guards
 import { HomeCanActivate } from './home/home.canActivate';
@@ -65,7 +65,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { RuntimeConvertPipe } from './detail/multiplicador.pipe';
 // import { RegisterComponent } from './register/register.component';
 // import { RememberComponent } from './remember/remember.component';
-// import { TopListComponent } from './top-list/top-list.component';
+import { TopListComponent } from './top-list/top-list.component';
 
 
 // import { FavoritesComponent } from './favorites/favorites.component';
@@ -88,7 +88,7 @@ export const stateComponents = [
   // PreloadComponent,
   // RegisterComponent,
   // RememberComponent,
-  // TopListComponent,
+  TopListComponent,
   VideoGenreComponent,
 ];
 
@@ -97,7 +97,7 @@ export const routesComponents = [
   // SearchComponent,
   DetailComponent,
   GenresComponent,
-  // ActorDetailComponent,
+  ActorDetailComponent,
   // FavoritesComponent
   // LoginComponent
 ];
@@ -119,7 +119,7 @@ export const resolves = [
   DetailResolve,
   GenresResolve,
   MovieGenreResolve,
-  // ActorDetailResolve
+  ActorDetailResolve
 ];
 
 export const guards = [
