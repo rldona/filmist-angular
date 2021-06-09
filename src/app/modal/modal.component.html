@@ -12,7 +12,8 @@
 			<span>Volver</span>
 		</button>
 	</article>
-	<!--<footer></footer>-->
 </div>
+
 <div class="velo" [ngClass]="{ 'show': showModal }" *ngIf="!showBtnClose"></div>
+
 <div class="velo" [ngClass]="{ 'show': showModal }" (click)="closeModal()" *ngIf="showBtnClose"></div>

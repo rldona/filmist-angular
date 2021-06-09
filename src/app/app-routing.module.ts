@@ -15,7 +15,7 @@ import { ActorDetailComponent } from './actor-detail/actor-detail.component';
 // import { PreloadComponent } from './preload/preload.component';
 
 import { HomeResolve } from './home/home.resolve';
-// import { FavoritesComponent } from './favorites/favorites.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 // import { SearchResolve } from './search/search.resolve';
 import { DetailResolve } from './detail/detail.resolve';
 import { GenresResolve } from './genres/genres.resolve';
@@ -59,10 +59,10 @@ const routes: Routes = [
     }
   },
 
-  // {
-  //   path: 'favorites',
-  //   component: FavoritesComponent
-  // },
+  {
+    path: 'favorites',
+    component: FavoritesComponent
+  },
 
   {
     path: 'top-list/:collection',
