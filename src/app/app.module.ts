@@ -16,6 +16,9 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { MovieFeaturedComponent } from './movie-featured/movie-featured.component';
 import { MovieScoreComponent } from './movie-score/movie-score.component';
+import { MovieListComponent } from './movie-list/movie-list.component';
+import { MovieItemComponent } from './movie-item/movie-item.component';
+import { DetailComponent } from './detail/detail.component';
 
 // services
 import { UserService } from './user.service';
@@ -25,17 +28,23 @@ import { ScreenService } from './screen.service';
 
 // resolves
 import { HomeResolve } from './home/home.resolve';
+import { DetailResolve } from './detail/detail.resolve';
 
 // guards
 import { HomeCanActivate } from './home/home.canActivate';
+import { DetailCanActivate } from './detail/detail.canActivate';
+import { DetailCanDeactivate } from './detail/detail.canDeactivate';
+
+// pipes
+import { RuntimeConvertPipe } from './detail/multiplicador.pipe';
 
 // consts
 export const stateComponents = [
   AppComponent,
   HeaderComponent,
   // LoadingComponent,
-  // MovieListComponent,
-  // MovieItemComponent,
+  MovieListComponent,
+  MovieItemComponent,
   MovieFeaturedComponent,
   MovieScoreComponent,
   // ResultListComponent,
@@ -45,14 +54,14 @@ export const stateComponents = [
 export const routesComponents = [
   HomeComponent,
   // SearchComponent,
-  // DetailComponent,
+  DetailComponent,
   // GenresComponent,
   // VideoGenreComponent,
   // ActorDetailComponent,
 ];
 
 export const pipes = [
-  // RuntimeConvertPipe
+  RuntimeConvertPipe
 ];
 
 export const services = [
@@ -65,7 +74,7 @@ export const services = [
 export const resolves = [
   HomeResolve,
   // SearchResolve,
-  // DetailResolve,
+  DetailResolve,
   // GenresResolve,
   // MovieGenreResolve,
   // ActorDetailResolve
@@ -75,8 +84,8 @@ export const guards = [
   // LoggedInGuard,
   HomeCanActivate,
   // HomeCanDeactivate,
-  // DetailCanActivate,
-  // DetailCanDeactivate
+  DetailCanActivate,
+  DetailCanDeactivate
 ];
 
 export function HttpLoaderFactory(http: HttpClient) {
