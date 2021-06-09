@@ -4,7 +4,7 @@
 
 * Angular app to search, sync and share movies and series.
 
-### Migration project of an application developed in Angular 2 to the latest version (12)
+### Migrating application in Angular 2 to Angular 12
 
 ____
 ### Work in progress...
