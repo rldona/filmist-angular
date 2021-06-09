@@ -1,0 +1,18 @@
+<div class="modal-component modal toCenterFixed" [ngClass]="{ 'show': showModal }">
+	<header>
+		<h2>{{title}}</h2>
+		<i class="material-icons" (click)="closeModal()" *ngIf="showBtnClose">close</i>
+	</header>
+	<article>
+		<p>{{subtitle}}</p>
+		<button class="btn" routerLink="/login">
+			<span>{{btnTitle}}</span>
+		</button>
+		<button class="btn-clear clear" *ngIf="!showBtnClose" (click)="goBack()">
+			<span>Volver</span>
+		</button>
+	</article>
+	<!--<footer></footer>-->
+</div>
+<div class="velo" [ngClass]="{ 'show': showModal }" *ngIf="!showBtnClose"></div>
+<div class="velo" [ngClass]="{ 'show': showModal }" (click)="closeModal()" *ngIf="showBtnClose"></div>

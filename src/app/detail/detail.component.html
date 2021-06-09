@@ -16,7 +16,7 @@
 			</div>
 			<div class="info-plus">
 				<!-- Switch Lists (favorites) -->
-				<!-- *** <fm-favorites-switch></fm-favorites-switch> -->
+				<fm-favorites-switch></fm-favorites-switch>
 				<div class="content">
 					<p>
 						<span>{{ 'ORIGINAL-TITLE' | translate }}</span> {{ movie?.original_title || movie?.original_name || '-'}}
@@ -52,10 +52,7 @@
 			<!-- Genres -->
 			<section class="genres" *ngIf="movie?.genres.length > 0">
 				<p class="title-info">{{ 'GENRES' | translate }}</p>
-				<!--<div class="grid"><p *ngFor="let genre of movie?.genres">{{ genre.name }}</p></div>-->
-
-				<!-- *** <fm-genre-list [list]="movie?.genres" [type]="type"></fm-genre-list> -->
-
+				<fm-genre-list [list]="movie?.genres" [type]="type"></fm-genre-list>
 			</section>
 			<!-- Actors -->
 			<section class="actors" *ngIf="actors?.length > 0">
@@ -81,6 +78,6 @@
 		</div>
 	</div>
 
-	<!-- *** <fm-modal [title]="'Opción bloqueada'" [subtitle]="'Para poder sincronizar tus peliculas y series favoritas tienes que iniciar sesión.'" [btnTitle]="'Iniciar sesión'" [showBtnClose]=true [showModal]="showModal"></fm-modal> -->
+	<fm-modal [title]="'Opción bloqueada'" [subtitle]="'Para poder sincronizar tus peliculas y series favoritas tienes que iniciar sesión.'" [btnTitle]="'Iniciar sesión'" [showBtnClose]=true [showModal]="showModal"></fm-modal>
 
 </div>

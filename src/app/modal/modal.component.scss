@@ -1,0 +1,100 @@
+.modal-component.modal {
+	background: #222;
+	width: 100%;
+	max-width: 500px;
+	z-index: 9999;
+	box-shadow: 0 0px 15px black;
+	display: none;
+	header {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		padding: 1rem;
+		background: #111;
+		font-size: 17px;
+		text-transform: uppercase;
+		text-align: center;
+		i {
+			cursor: pointer;
+		}
+	}
+	article {
+		padding: 1rem;
+		text-align: center;
+		p {
+			font-size: 16px;
+			margin: 0 0 30px;
+			text-align: left;
+		}
+		.btn {
+			background: #22b573;
+			border: 1px solid #22b573;
+			width: 50%;
+			padding: 15px;
+			border-radius: 5px;
+			outline: none;
+			cursor: pointer;
+			margin-bottom: 15px;
+			span {
+				font-size: 16px;
+				color: #FFF;
+			}
+		}
+		.btn.clear {
+			background: transparent;
+			margin-top: 20px;
+			span {
+				color: #22b573;
+			}
+		}
+		.btn-clear {
+			background: #222;
+			border: 1px solid #22b573;
+			width: 50%;
+			padding: 15px;
+			border-radius: 5px;
+			outline: none;
+			cursor: pointer;
+			margin-bottom: 15px;
+			span {
+				font-size: 16px;
+				color: #FFF;
+			}
+		}
+		.btn-clear.clear {
+			background: transparent;
+			span {
+				color: #22b573;
+			}
+		}
+	}
+	footer {
+		padding: 1rem;
+	}
+}
+
+.modal-component.modal {
+  &.show {
+	  display: block;
+  }
+}
+
+.velo {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 999;
+}
+
+.velo {
+  &.show {
+	  display: block;
+  }
+}

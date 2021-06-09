@@ -1,0 +1,8 @@
+<section class="genre-list-component">
+    <h2 class="title">{{ title }}
+        <span></span>
+    </h2>
+    <ul class="genre-list">
+        <li *ngFor="let genre of list" (click)="service.loadGenre(genre, type)"> {{ genre.name }} </li>
+    </ul>
+</section>
