@@ -1,0 +1,58 @@
+<div class="favorites-component">
+    <fm-header></fm-header>
+    <div class="result">
+        <div class="container">
+            <p>Favoritos</p>
+            <h2>Aquí verás todas las películas o series que marques como favoritas</h2>
+        </div>
+    </div>
+    <!-- Saved -->
+    <section class="first">
+        <div class="container">
+            <div id="cssload-pgloading" *ngIf="favorites.saved.length === 0">
+                <div class="cssload-loadingwrap">
+                    <ul class="cssload-bokeh">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <fm-movie-list [title]="'Las quiero ver'" [list]="favorites.saved" [collection]="'saved-favorites'" type="movie"></fm-movie-list>
+        </div>
+    </section>
+    <!-- Viewed -->
+    <section class="first">
+        <div class="container">
+            <div id="cssload-pgloading" *ngIf="favorites.viewed.length === 0">
+                <div class="cssload-loadingwrap">
+                    <ul class="cssload-bokeh">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <fm-movie-list [title]="'Las he visto'" [list]="favorites.viewed" [collection]="'viewed-favorites'" type="movie"></fm-movie-list>
+        </div>
+    </section>
+    <!-- Favorites -->
+    <section class="first">
+        <div class="container">
+            <div id="cssload-pgloading" *ngIf="favorites.favorite.length === 0">
+                <div class="cssload-loadingwrap">
+                    <ul class="cssload-bokeh">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <fm-movie-list [title]="'Mis favoritas'" [list]="favorites.favorite" [collection]="'favorite-favorites'" type="movie"></fm-movie-list>
+        </div>
+    </section>
+    <fm-modal [title]="'Página bloqueada'" [subtitle]="'Para poder ver las películas y series marcadas como favoritas tienes que iniciar sesión.'" [btnTitle]="'Iniciar sesión'" [showBtnClose]="false" [showModal]="showModal"></fm-modal>
+</div>
