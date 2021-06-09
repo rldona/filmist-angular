@@ -1,0 +1,16 @@
+<div class="remember-component" style="background: url('./assets/img/bg-pattern.jpg');">
+	<section class="box">
+		<div class="welcome">
+			<i class="material-icons arrow-back" (click)="back()">arrow_back</i>
+			<h2>Introduce tu email para que te enviemos un formulario de cambio de contraseña</h2>
+		</div>
+		<div class="login">
+			<form (ngSubmit)="onRemember(f.value)" class="form">
+				<input type="email" id="email" name="email" placeholder="Email" ngModel />
+				<button type="submit" class="btn-filmist">
+					<span>Recordar contraseña</span>
+				</button>
+			</form>
+		</div>
+	</section>
+</div>

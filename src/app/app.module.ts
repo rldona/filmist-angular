@@ -7,13 +7,15 @@ import { FormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+
 // Routes
 import { AppRoutingModule } from './app-routing.module';
 
 // Routes Components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-// import { LoadingComponent } from './loading/loading.component';
+import { LoadingComponent } from './loading/loading.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieItemComponent } from './movie-item/movie-item.component';
 import { MovieFeaturedComponent } from './movie-featured/movie-featured.component';
@@ -56,21 +58,20 @@ import { DetailCanActivate } from './detail/detail.canActivate';
 // Plugins
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
-// import { MovieListFilterDirective } from './movie-list/movie-list-filter.directive';
 // import { CommonModule } from './common/common.module';
-// import { LoginComponent } from './login/login.component';
-// import { LoggedInGuard } from './shared/logged-in-guard/logged-in-guard';
-// import { PreloadComponent } from './preload/preload.component';
+import { LoginComponent } from './login/login.component';
+import { LoggedInGuard } from './shared/logged-in-guard/logged-in-guard';
+import { PreloadComponent } from './preload/preload.component';
 
 // Pipes
 import { RuntimeConvertPipe } from './detail/multiplicador.pipe';
-// import { RegisterComponent } from './register/register.component';
-// import { RememberComponent } from './remember/remember.component';
+import { RegisterComponent } from './register/register.component';
+import { RememberComponent } from './remember/remember.component';
 import { TopListComponent } from './top-list/top-list.component';
+import { MovieListFilterDirective } from './movie-list/movie-list-filter.directive';
 
 // consts
 export const stateComponents = [
-  // LoadingComponent,
   AppComponent,
   HeaderComponent,
   MovieListComponent,
@@ -82,16 +83,17 @@ export const stateComponents = [
   FavoritesSwitchComponent,
   FavoritesSwitchItemComponent,
   ModalComponent,
-  // MovieListFilterDirective,
-  // PreloadComponent,
-  // RegisterComponent,
-  // RememberComponent,
+  MovieListFilterDirective,
+  PreloadComponent,
+  RegisterComponent,
+  RememberComponent,
+  LoadingComponent,
   TopListComponent,
   VideoGenreComponent,
 ];
 
 export const routesComponents = [
-  // LoginComponent
+  LoginComponent,
   HomeComponent,
   SearchComponent,
   DetailComponent,
@@ -121,12 +123,18 @@ export const resolves = [
 ];
 
 export const guards = [
-  // LoggedInGuard,
+  LoggedInGuard,
   HomeCanActivate,
   HomeCanDeactivate,
   DetailCanActivate,
   DetailCanDeactivate
 ];
+
+export class MyHammerConfig extends HammerGestureConfig  {
+  overrides = <any>{
+      'swipe': {velocity: 0.4, threshold: 20} // override default settings
+  };
+}
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -156,6 +164,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ...services,
     ...resolves,
     ...guards,
+    { provide: HAMMER_GESTURE_CONFIG,  useClass: MyHammerConfig }
   ],
   bootstrap: [AppComponent]
 })

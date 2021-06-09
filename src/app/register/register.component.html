@@ -1,0 +1,22 @@
+<div class="register-component" style="background: url('./assets/img/bg-pattern.jpg');">
+	<section class="box">
+		<div class="welcome">
+			<i class="material-icons arrow-back" (click)="back()">arrow_back</i>
+			<h2>Hola, regístrate en Filmist</h2>
+		</div>
+		<div class="login">
+			<form #f="ngForm" (ngSubmit)="onRegister(f.value)" class="form">
+				<input type="text" id="name" name="name" placeholder="Nombre" ngModel />
+				<input type="email" id="email" name="email" placeholder="Email" ngModel />
+				<input type="password" id="password" name="password" placeholder="Contraseña" ngModel />
+				<button type="submit" class="btn-filmist">
+					<span>{{ 'REGISTER-FILMIST' | translate }}</span>
+				</button>
+				<p>¿Ya tienes una cuenta?</p>
+				<a (click)="back()" class="btn-filmist-link clear">
+					<span>Inicia sesión</span>
+				</a>
+			</form>
+		</div>
+	</section>
+</div>

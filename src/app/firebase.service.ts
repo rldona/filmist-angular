@@ -2,16 +2,7 @@ import { Injectable } from '@angular/core';
 
 import * as firebase from 'firebase';
 
-interface IConfigFirebase {
-  apiKey: string,
-  authDomain: string,
-  databaseURL: string,
-  projectId: string,
-  storageBucket: string,
-  messagingSenderId: string
-}
-
-const configFirebase: IConfigFirebase = {
+const configFirebase: any = {
   apiKey: 'AIzaSyCXtS9vg8Uvf6FncjD3ysHSGNgQTe6OsRc',
   authDomain: 'filmistsoreapp.firebaseapp.com',
   databaseURL: 'https://filmistsoreapp.firebaseio.com',
@@ -22,7 +13,7 @@ const configFirebase: IConfigFirebase = {
 
 @Injectable()
 export class FirebaseService {
-  config: IConfigFirebase;
+  config: any;
 
   constructor() {
     this.init();
@@ -84,9 +75,10 @@ export class FirebaseService {
 
   setConfig(prop: any, value: any): void {
     this.config[prop] = value;
+    console.log(this.config);
   }
 
-  getConfig(): IConfigFirebase {
+  getConfig(): any {
     return this.config;
   }
 
