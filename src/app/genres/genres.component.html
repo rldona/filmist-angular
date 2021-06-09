@@ -1,0 +1,19 @@
+<fm-header></fm-header>
+<div class="genres-component">
+    <section class="genre-select">
+        <div class="container">
+            <h2>{{ 'WHAT-WANT-FILTER' | translate}}</h2>
+            <div class="select-component">
+                <div [ngClass]="{ 'genre-movie-select' : genreMovieSelect }" (click)="genreSwitch()">{{ 'MOVIES' | translate}}</div>
+                <div [ngClass]="{ 'genre-tv-select' : genreTvSelect }" (click)="genreSwitch()">{{ 'TV' | translate}}</div>
+            </div>
+        </div>
+    </section>
+    <section class="movies-genres">
+        <div class="container">
+            <h2 class="title">{{ 'CHOOSE-A-GENRE' | translate}}</h2>
+            <fm-genre-list [list]="genres" [type]="genreMovieSelect ? 'movie' : 'tv'"></fm-genre-list>
+        </div>
+    </section>
+    <!--<section class="movies-genres"><div class="container"><h2 class="title">Descubre series por género <span></span></h2><fm-genre-list [list]="genres" [type]="'tv'"></fm-genre-list></div></section>-->
+</div>

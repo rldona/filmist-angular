@@ -18,7 +18,7 @@ import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieItemComponent } from './movie-item/movie-item.component';
 import { MovieFeaturedComponent } from './movie-featured/movie-featured.component';
 import { MovieScoreComponent } from './movie-score/movie-score.component';
-// import { ResultListComponent } from './result-list/result-list.component';
+import { ResultListComponent } from './result-list/result-list.component';
 import { GenreListComponent } from './genre-list/genre-list.component';
 import { FavoritesSwitchComponent } from './favorites-switch/favorites-switch.component';
 import { FavoritesSwitchItemComponent } from './favorites-switch-item/favorites-switch-item.component';
@@ -28,8 +28,8 @@ import { ModalComponent } from './modal/modal.component';
 import { HomeComponent } from './home/home.component';
 // import { SearchComponent } from './search/search.component';
 import { DetailComponent } from './detail/detail.component';
-// import { GenresComponent } from './genres/genres.component';
-// import { VideoGenreComponent } from './video-genre/video-genre.component';
+import { GenresComponent } from './genres/genres.component';
+import { VideoGenreComponent } from './video-genre/video-genre.component';
 // import { ActorDetailComponent } from './actor-detail/actor-detail.component';
 
 // Services
@@ -42,8 +42,8 @@ import { ScreenService } from './screen.service';
 import { HomeResolve } from './home/home.resolve';
 // import { SearchResolve } from './search/search.resolve';
 import { DetailResolve } from './detail/detail.resolve';
-// import { GenresResolve } from './genres/genres.resolve';
-// import { MovieGenreResolve } from './video-genre/video-genre.resolve';
+import { GenresResolve } from './genres/genres.resolve';
+import { MovieGenreResolve } from './video-genre/video-genre.resolve';
 // import { ActorDetailResolve } from './actor-detail/actor-detail.resolve';
 
 // Guards
@@ -53,7 +53,8 @@ import { DetailCanDeactivate } from './detail/detail.canDeactivate';
 import { DetailCanActivate } from './detail/detail.canActivate';
 
 // Plugins
-// import { InfiniteScrollModule } from 'angular2-infinite-scroll';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 // import { MovieListFilterDirective } from './movie-list/movie-list-filter.directive';
 // import { CommonModule } from './common/common.module';
 // import { LoginComponent } from './login/login.component';
@@ -78,7 +79,7 @@ export const stateComponents = [
   MovieItemComponent,
   MovieFeaturedComponent,
   MovieScoreComponent,
-  // ResultListComponent,
+  ResultListComponent,
   GenreListComponent,
   FavoritesSwitchComponent,
   FavoritesSwitchItemComponent,
@@ -88,14 +89,14 @@ export const stateComponents = [
   // RegisterComponent,
   // RememberComponent,
   // TopListComponent,
+  VideoGenreComponent,
 ];
 
 export const routesComponents = [
   HomeComponent,
   // SearchComponent,
   DetailComponent,
-  // GenresComponent,
-  // VideoGenreComponent,
+  GenresComponent,
   // ActorDetailComponent,
   // FavoritesComponent
   // LoginComponent
@@ -116,8 +117,8 @@ export const resolves = [
   HomeResolve,
   // SearchResolve,
   DetailResolve,
-  // GenresResolve,
-  // MovieGenreResolve,
+  GenresResolve,
+  MovieGenreResolve,
   // ActorDetailResolve
 ];
 
@@ -143,6 +144,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    InfiniteScrollModule,
     FormsModule,
     TranslateModule.forRoot({
       loader: {

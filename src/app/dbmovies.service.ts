@@ -191,7 +191,7 @@ export class DbmoviesService {
 
     return this.http[service.verb](url)
       .toPromise()
-      .then((response: any) => response.json())
+      .then((response: any) => response)
       .catch((error: any) => console.log(error));
   }
 
@@ -296,7 +296,7 @@ export class DbmoviesService {
 
     try {
       const response: any = await this.http.get(genres).toPromise();
-      return this.filterArray(response.json().genres, 10770);
+      return this.filterArray(response.genres, 10770);
     } catch (error) {
       return console.log(error);
     }
