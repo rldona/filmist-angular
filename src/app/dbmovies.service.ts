@@ -209,7 +209,7 @@ export class DbmoviesService {
 
     try {
       const response: any = await this.http.get(list).toPromise();
-      return response.json();
+      return response;
     } catch (error) {
       return console.log(error);
     }
@@ -223,7 +223,7 @@ export class DbmoviesService {
 
     try {
       const response: any = await this.http.get(film).toPromise();
-      return response.json();
+      return response;
     } catch (error) {
       return console.log(error);
     }
@@ -237,7 +237,7 @@ export class DbmoviesService {
 
     try {
       const response: any = await this.http.get(credits).toPromise();
-      return response.json();
+      return response;
     } catch (error) {
       return console.log(error);
     }
@@ -251,7 +251,7 @@ export class DbmoviesService {
 
     try {
       const response: any = await this.http.get(reviews).toPromise();
-      return response.json();
+      return response;
     } catch (error) {
       return console.log(error);
     }
@@ -285,7 +285,7 @@ export class DbmoviesService {
 
     try {
       const response: any = await this.http.get(similar).toPromise();
-      return response.json();
+      return response;
     } catch (error) {
       return console.log(error);
     }
@@ -329,7 +329,7 @@ export class DbmoviesService {
 
     try {
       const response: any = await this.http.get(listByGenre).toPromise();
-      return response.json();
+      return response;
     } catch (error) {
       return console.log(error);
     }
@@ -352,7 +352,7 @@ export class DbmoviesService {
 
     try {
       const response: any = await this.http.get(discover).toPromise();
-      return response.json();
+      return response;
     } catch (error) {
       return console.log(error);
     }
@@ -363,7 +363,7 @@ export class DbmoviesService {
 
     try {
       const response: any = await this.http.get(actor).toPromise();
-      return response.json();
+      return response;
     } catch (error) {
       return console.log(error);
     }
@@ -383,7 +383,7 @@ export class DbmoviesService {
 
     try {
       const response: any = await this.http.get(moviesByActor).toPromise();
-      return response.json();
+      return response;
     } catch (error) {
       return console.log(error);
     }

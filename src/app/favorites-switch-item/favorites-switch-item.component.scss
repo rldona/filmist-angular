@@ -1,0 +1,33 @@
+.favorites-switch-item-component {
+	padding: 1rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	cursor: pointer;
+	i {
+		width: 23px;
+		margin-bottom: 5px;
+		color: #666;
+	}
+	p {
+		color: #666;
+	}
+}
+
+.favorites-switch-item-component {
+  &.selected {
+    i {
+      color: #24b372;
+    }
+    p {
+      color: #24b372;
+    }
+  }
+}

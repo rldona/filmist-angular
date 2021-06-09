@@ -1,0 +1,83 @@
+
+<fm-header></fm-header>
+<div class="detail-component">
+	<fm-movie-featured [detail]="movie" [options]="{ title: true, detail: true, seeDetail: false }"></fm-movie-featured>
+	<div class="container">
+		<div class="content">
+			<!-- Movie info -->
+			<div class="info">
+				<div style="height: 40px; display: flex; align-items: flex-start;">
+					<i class="material-icons" style="display: block; height: 35px; width: 40px; color: #FFF; font-size: 30px; cursor: pointer;" (click)="location.back()">arrow_back</i>
+					<p class="title">{{ movie?.title || movie?.name }}</p>
+				</div>
+				<p class="overview">{{ movie?.overview }}
+					<span *ngIf="movie?.overview === null">{{ 'SYNPSIS-NOT-AVALIBLE' | translate }}</span>
+				</p>
+			</div>
+			<div class="info-plus">
+				<!-- Switch Lists (favorites) -->
+				<fm-favorites-switch></fm-favorites-switch>
+				<div class="content">
+					<p>
+						<span>{{ 'ORIGINAL-TITLE' | translate }}</span> {{ movie?.original_title || movie?.original_name || '-'}}
+					</p>
+					<p *ngIf="!movie?.name">
+						<span>{{ 'DURATION' | translate }}</span> {{ movie?.runtime === 0 || movie?.runtime === null ? '90 min' : (movie?.runtime | runtimeConvert) || '-' }}
+					</p>
+					<p *ngIf="movie?.name">
+						<span>{{ 'SEASONS' | translate }}</span>{{ movie?.number_of_seasons }}
+					</p>
+					<p *ngIf="movie?.name">
+						<span>{{ 'EPISODIES' | translate }}</span>{{ movie?.number_of_episodes }}
+					</p>
+					<p>
+						<span>{{ 'YEAR' | translate }}</span> {{ year?.split('-')[0] || movie?.last_air_date.split('-')[0] || '-' }}
+					</p>
+					<!--<p><span>País</span> {{ movie?.origin_country[0] || movie?.production_countries[0].name }}</p>-->
+					<p>
+						<span>{{ 'DIRECTOR' | translate }}</span> {{ director?.name || '-' }}
+					</p>
+					<p>
+						<span>{{ 'SCREENPLAY' | translate }}</span> {{ screenplay?.name || '-' }}
+					</p>
+					<p>
+						<span>{{ 'MUSIC' | translate }}</span> {{ musicEditor?.name || '-' }}
+					</p>
+					<p>
+						<span>{{ 'PHOTOGRAPH' | translate }}</span> {{ directorPhotography?.name || '-' }}
+					</p>
+					<!--<p><span>Reparto</span><i *ngIf="actorsFull.length === 0">-</i><i *ngFor="let actor of actorsFull">{{ actor?.name }}, </i></p>-->
+				</div>
+			</div>
+			<!-- Genres -->
+			<section class="genres" *ngIf="movie?.genres.length > 0">
+				<p class="title-info">{{ 'GENRES' | translate }}</p>
+				<fm-genre-list [list]="movie?.genres" [type]="type"></fm-genre-list>
+			</section>
+			<!-- Actors -->
+			<section class="actors" *ngIf="actors?.length > 0">
+				<p class="title-info">{{ 'ACTORS' | translate }}</p>
+				<ul class="grid">
+					<li *ngFor="let actor of actors" (click)="loadActor(actor)" [ngClass]="{ 'whitoutCursor' : type === 'tv' }">
+						<img [src]="'https://image.tmdb.org/t/p/w132_and_h132_bestv2/' + actor?.profile_path" />
+						<p>{{ actor.name }}</p>
+						<p class="see animation" *ngIf="type !== 'tv'">{{ 'SEE-YOUR-FILMS' | translate }}</p>
+					</li>
+				</ul>
+			</section>
+			<!-- Reviews -->
+			<section class="reviews" *ngIf="reviews?.length > 0">
+				<p class="title-info">{{ 'REVIEWS' | translate }}</p>
+				<article *ngFor="let review of reviews">
+					<p>{{ review.content }}</p>
+					<h2>" {{ review.author }} "</h2>
+				</article>
+			</section>
+			<!-- Similar Movies -->
+			<fm-movie-list [title]="'Similar'" [list]="similarList" [collection]="'similar'" *ngIf="similarList?.length > 0" [type]="type" [hideShowMore]="true"></fm-movie-list>
+		</div>
+	</div>
+
+	<fm-modal [title]="'Opción bloqueada'" [subtitle]="'Para poder sincronizar tus peliculas y series favoritas tienes que iniciar sesión.'" [btnTitle]="'Iniciar sesión'" [showBtnClose]=true [showModal]="showModal"></fm-modal>
+
+</div>

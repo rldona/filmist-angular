@@ -68,45 +68,43 @@ export class HomeComponent implements OnInit {
 
     // apply resolve home
     this.lists = this._route.snapshot.data['home'];
-
-    console.log(this.lists);
   }
 
   reloadLists() {
     this._dbmoviesService.getTop('now_playing', 'movie').then((res) => {
       this.lists[0] = res;
-    }).catch((_error) => {
-      // console.log(error);
+    }).catch((error) => {
+      console.log(error);
     });
 
     this._dbmoviesService.getTop('popular', 'movie').then((res) => {
       this.lists[1] = res;
-    }).catch((_error) => {
-      // console.log(error);
+    }).catch((error) => {
+      console.log(error);
     });
 
     this._dbmoviesService.getTop('top_rated', 'movie').then((res) => {
       this.lists[3] = res;
-    }).catch((_error) => {
-      // console.log(error);
+    }).catch((error) => {
+      console.log(error);
     });
 
     this._dbmoviesService.getTop('on_the_air', 'tv').then((res) => {
       this.lists[4] = res;
-    }).catch((_error) => {
-      // console.log(error);
+    }).catch((error) => {
+      console.log(error);
     });
 
     this._dbmoviesService.getTop('top_rated', 'tv').then((res) => {
       this.lists[5] = res;
-    }).catch((_error) => {
-      // console.log(error);
+    }).catch((error) => {
+      console.log(error);
     });
 
     this._dbmoviesService.getTop('popular', 'tv').then((res) => {
       this.lists[6] = res;
-    }).catch((_error) => {
-      // console.log(error);
+    }).catch((error) => {
+      console.log(error);
     });
   }
 }

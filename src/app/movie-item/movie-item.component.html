@@ -1,0 +1,26 @@
+<div class="movie-item-component" (click)="loadDetail(movie)">
+	<div class="movie-item" [ngClass]="{ 'hover' : addHover }" (mouseenter)="showVelo($event)" (mouseleave)="showVelo($event)">
+		<div class="data">
+			<!--<div class="see-detail item"><i class="material-icons">touch_app</i></div>-->
+			<div class="poster" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/' + posterSize + movie?.poster_path + ')'}">
+				<div class="velo">
+					<i class="material-icons">visibility</i>
+				</div>
+			</div>
+			<div class="description">
+				<h2>{{ movie?.title || movie?.name }}</h2>
+				<p *ngIf="movie?.release_date">{{ movie?.release_date.split('-')[0] }}</p>
+				<p *ngIf="movie?.first_air_date">{{ movie?.first_air_date.split('-')[0] }}</p>
+				<div class="details">
+					<h3>
+						<i class="material-icons" [ngClass]="{ 'positive' : movie?.vote_average > 5, 'negative' : movie?.vote_average < 5, 'neutro' : movie?.vote_average === 5 }">{{ this.movie?.vote_average >= 5 ? (this.movie?.vote_average == 5 ? 'thumbs_up_down' : 'thumb_up') : 'thumb_down' }}
+						</i>{{ movie?.vote_average }}
+					</h3>
+					<h3>
+						<i class="material-icons visibility">visibility</i>{{ movie?.vote_count }}
+					</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

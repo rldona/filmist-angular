@@ -1,7 +1,14 @@
+![alt text](./src/assets/github/github-cover.png "Filmist preview")
+
 # Filmist
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
+* Angular app to search, sync and share movies and series.
 
+### Migration project of an application developed in Angular 2 to the latest version (12)
+
+____
+### Work in progress...
+____
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

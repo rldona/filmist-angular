@@ -1,0 +1,36 @@
+.genre-list-component {
+	background: #101010;
+	.genre-list {
+		overflow: hidden;
+		padding: 0 1rem;
+		li {
+			padding: 1rem 1%;
+			min-width: 40%;
+			color: #CCC;
+			border: 1px solid #777;
+			margin: 5px 5% 10px;
+			text-align: center;
+			font-size: 10px;
+			cursor: pointer;
+			float: left;
+			-webkit-transition: all ease-in-out 0.15s;
+			transition: all ease-in-out 0.15s;
+			&:hover {
+				color: #24b372;
+				border: 1px solid #24b372;
+			}
+		}
+	}
+}
+
+@media (min-width: 767px) {
+	.genre-list-component {
+		.genre-list {
+			li {
+				min-width: 18%;
+				font-size: 14px;
+				margin: 5px 1% 1rem;
+			}
+		}
+	}
+}

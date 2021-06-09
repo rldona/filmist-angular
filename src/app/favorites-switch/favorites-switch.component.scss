@@ -1,0 +1,11 @@
+.favorites-switch-component {
+  background: #171717;
+  width: 100%;
+  margin: 0 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  border-bottom: 15px solid #101010;
+}

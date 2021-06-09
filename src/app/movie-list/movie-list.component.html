@@ -1,0 +1,11 @@
+<div class="movie-list">
+	<div class="header-title">
+		<h2 class="title">{{ title }}</h2>
+		<h3 class="title" (click)="loadMore()" *ngIf="!hideShowMore && filterList.length > 9">Ver todas</h3>
+	</div>
+	<ul class="movies-grid">
+		<li *ngFor="let movie of filterList">
+			<fm-movie-item [movie]="movie"></fm-movie-item>
+		</li>
+	</ul>
+</div>
