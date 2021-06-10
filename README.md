@@ -5,10 +5,8 @@
 * Angular app to search, sync and share movies and series.
 
 ### Migrating application in Angular 2 to Angular 12
+____
 
-____
-### Work in progress...
-____
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
