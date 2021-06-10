@@ -7,6 +7,16 @@
 ### Migrating application in Angular 2 to Angular 12
 ____
 
+# TODO
+
+[ ] Refactor the code. Disclaimer: it is a project developed in 2012.
+[ ] Add TypeScript fonts correctly. Add types and interfaces.
+[ ] Remove the script from Firebase (JS vanilla) and integrate the new version in TypeScript (https://github.com/angular/angularfire).
+[ ] Add unit tests.
+[ ] Add functional tests.
+[ ] Add Storybook.
+[ ] Add docker-compose.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
