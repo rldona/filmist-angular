@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { UserService } from '../user.service';
-import { FirebaseService } from '../firebase.service';
+import { UserService } from '../../services/user.service';
+import { FirebaseService } from '../../services/firebase.service';
 
 @Component({
   selector: 'fm-register',

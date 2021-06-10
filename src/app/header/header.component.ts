@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { DbmoviesService } from '../dbmovies.service';
+import { DbmoviesService } from '../../services/dbmovies.service';
 import { TranslateService } from '@ngx-translate/core';
-import { ScreenService } from '../screen.service';
-import { FirebaseService } from '../firebase.service';
+import { ScreenService } from '../../services/screen.service';
+import { FirebaseService } from '../../services/firebase.service';
 
 import * as firebase from 'firebase';
 
-// TODO: locura -- borra en cuanto averigue el bug
 import { Location } from '@angular/common';
-// TODO: locura -- borra en cuanto averigue el bug
 
 @Component({
   selector: 'fm-header',
@@ -38,7 +36,7 @@ export class HeaderComponent {
               private _dbmoviesService: DbmoviesService,
               private translate: TranslateService,
                private _firebaseService: FirebaseService,
-              private _location: Location, // TODO: locura -- borra en cuanto averigue el bug
+              private _location: Location,
               private _screenService: ScreenService) {
 
     this.settings = {
@@ -60,8 +58,6 @@ export class HeaderComponent {
     this.languageEN = this._dbmoviesService.getLang() === 'en' ? true : false;
     this.languageFR = this._dbmoviesService.getLang() === 'fr' ? true : false;
 
-    // this.back(); // TODO: locura -- borra en cuanto averigue el bug
-
     firebase.default.auth().onAuthStateChanged((user) => {
       if (user) {
         this.showMiniLogin = true;
@@ -79,7 +75,6 @@ export class HeaderComponent {
     });
   }
 
-  // TODO: locura -- borra en cuanto averigue el bug
   back() {
     if (!this._firebaseService.getIsBack()) {
       this._firebaseService.setIsBack(true);
@@ -194,7 +189,6 @@ export class HeaderComponent {
     this._firebaseService.logout()
       .then((_response: any) => {
         // this._firebaseService.setIsBack(false);
-
         this.showOptions = false;
         this.showMiniLogin = false;
         // this._router.navigate(['/lists']);

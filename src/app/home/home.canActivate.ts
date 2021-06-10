@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 // import * as firebase from 'firebase';
 
-import { FirebaseService } from '../firebase.service';
+import { FirebaseService } from '../../services/firebase.service';
 
 @Injectable()
 export class HomeCanActivate { // implements CanActivate {

@@ -35,7 +35,7 @@ export class FirebaseService {
       displayName: name,
       photoURL: null
     }).then(() => {
-      // console.log('Update successful.');
+      console.log('Update successful.');
     }, (_error: any) => {
       console.log('// An error happened.');
     });

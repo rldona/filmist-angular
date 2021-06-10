@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DbmoviesService } from '../dbmovies.service';
+import { DbmoviesService } from '../../services/dbmovies.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

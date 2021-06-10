@@ -2,7 +2,7 @@ import { Component, OnInit, DoCheck } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import * as firebase from 'firebase';
-import { DbmoviesService } from '../dbmovies.service';
+import { DbmoviesService } from '../../services/dbmovies.service';
 
 @Component({
   selector: 'fm-favorites',

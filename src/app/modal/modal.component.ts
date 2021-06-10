@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Location } from '@angular/common';
 
-import { DbmoviesService } from '../dbmovies.service';
+import { DbmoviesService } from '../../services/dbmovies.service';
 
 @Component({
   selector: 'fm-modal',
