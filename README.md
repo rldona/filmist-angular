@@ -3,8 +3,8 @@
 # Filmist
 
 * Angular app to search, sync and share movies and series: https://filmistsoreapp.web.app
+* Migrating an application in Angular 2 to Angular 12
 
-### Migrating application in Angular 2 to Angular 12
 ____
 
 ## ToDo
