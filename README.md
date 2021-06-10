@@ -9,13 +9,13 @@ ____
 
 # TODO
 
-[ ] Refactor the code. Disclaimer: it is a project developed in 2012.
-[ ] Add TypeScript fonts correctly. Add types and interfaces.
-[ ] Remove the script from Firebase (JS vanilla) and integrate the new version in TypeScript (https://github.com/angular/angularfire).
-[ ] Add unit tests.
-[ ] Add functional tests.
-[ ] Add Storybook.
-[ ] Add docker-compose.
+- [ ] Refactor the code. Disclaimer: it is a project developed in 2012.
+- [ ] Add TypeScript fonts correctly. Add types and interfaces.
+- [ ] Remove the script from Firebase (JS vanilla) and integrate the new version in TypeScript (https://github.com/angular/angularfire).
+- [ ] Add unit tests.
+- [ ] Add functional tests.
+- [ ] Add Storybook.
+- [ ] Add docker-compose.
 
 ## Development server
 
