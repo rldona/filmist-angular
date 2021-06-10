@@ -7,7 +7,7 @@
 ### Migrating application in Angular 2 to Angular 12
 ____
 
-# ToDo
+## ToDo
 
 - [ ] Refactor the code. Disclaimer: it is a project developed in 2012.
 - [ ] Add types of TypeScript correctly. Too, add models (types and interfaces).
