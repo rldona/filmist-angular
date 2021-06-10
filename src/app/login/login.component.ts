@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
 
 import * as firebase from 'firebase';
 
@@ -19,7 +18,6 @@ export class LoginComponent implements OnInit {
 
   constructor(private _router: Router,
               private _dbmoviesService: DbmoviesService,
-              private translate: TranslateService,
               private _firebaseService: FirebaseService) {
     this.navigator    = _router;
     this.showRegister = false;
@@ -41,6 +39,9 @@ export class LoginComponent implements OnInit {
   loginFilmist(form: any): void {
     this._firebaseService.passwordAuthProvider(form)
       .then((_response: any) => {
+
+        console.log('**** is logged ****');
+
         this._firebaseService.setConfig('currentRoute', 'login');
         this._router.navigate(['/preload']);
       }).catch((error: any) => {

@@ -16,7 +16,6 @@ export class RegisterComponent {
 
   constructor(private _firebaseService: FirebaseService,
               private _router: Router,
-              private _user: UserService,
               private _location: Location) {
     this.location = _location;
   }

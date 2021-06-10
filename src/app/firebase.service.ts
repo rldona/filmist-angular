@@ -21,7 +21,9 @@ export class FirebaseService {
 
   init() {
     firebase.default.initializeApp(configFirebase);
-    this.config = null;
+    this.config = {
+      currentRoute: ''
+    };
   }
 
   registerUser(credentials: any) {
@@ -75,7 +77,6 @@ export class FirebaseService {
 
   setConfig(prop: any, value: any): void {
     this.config[prop] = value;
-    console.log(this.config);
   }
 
   getConfig(): any {

@@ -41,8 +41,12 @@ export class PreloadComponent implements OnInit {
         }
 
         this._dbmoviesService.setFavorite(arr, 'list');
+
         console.log('getFavorites(): ', this._dbmoviesService.getFavorites());
-        this._router.navigate(['/' + route]);
+
+        setTimeout(() => {
+          this._router.navigate(['/' + route]);
+        }, 2500);
       });
     });
   }
