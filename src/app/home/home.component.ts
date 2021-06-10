@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { DbmoviesService } from '../dbmovies.service';
+import { DbmoviesService } from '../../services/dbmovies.service';
 
 @Component({
   selector: 'fm-home',

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router, Event, NavigationEnd } from '@angular/router';
 
 import { TranslateService } from '@ngx-translate/core';
-import { DbmoviesService } from './dbmovies.service';
+import { DbmoviesService } from '../services/dbmovies.service';
 
 // declare let ga: Function;
 

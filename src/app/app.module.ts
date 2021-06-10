@@ -35,10 +35,10 @@ import { GenresComponent } from './genres/genres.component';
 import { VideoGenreComponent } from './video-genre/video-genre.component';
 
 // Services
-import { UserService } from './user.service';
-import { FirebaseService } from './firebase.service';
-import { DbmoviesService } from './dbmovies.service';
-import { ScreenService } from './screen.service';
+import { UserService } from '../services/user.service';
+import { FirebaseService } from '../services/firebase.service';
+import { DbmoviesService } from '../services/dbmovies.service';
+import { ScreenService } from '../services/screen.service';
 import { FavoritesComponent } from './favorites/favorites.component';
 
 // Resolves
@@ -58,7 +58,6 @@ import { DetailCanActivate } from './detail/detail.canActivate';
 // Plugins
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
-// import { CommonModule } from './common/common.module';
 import { LoginComponent } from './login/login.component';
 import { LoggedInGuard } from './shared/logged-in-guard/logged-in-guard';
 import { PreloadComponent } from './preload/preload.component';

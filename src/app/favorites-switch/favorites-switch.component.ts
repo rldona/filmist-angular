@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import * as firebase from 'firebase';
 
-import { DbmoviesService } from '../dbmovies.service';
+import { DbmoviesService } from '../../services/dbmovies.service';
 
 @Component({
   selector: 'fm-favorites-switch',

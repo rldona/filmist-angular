@@ -1,7 +1,7 @@
 import { Component, OnChanges, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { DbmoviesService } from '../dbmovies.service';
+import { DbmoviesService } from '../../services/dbmovies.service';
 import { Movie } from '../movie-item/movie';
 
 @Component({

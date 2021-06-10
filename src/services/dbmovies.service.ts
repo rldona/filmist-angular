@@ -172,10 +172,6 @@ export class DbmoviesService {
     this._router.navigate(['movies/genre/', genre.id ]);
   }
 
-  //
-  // # END # Borrar estos getters - setters
-  //
-
   get(service: { name: any; data: { id: string; }; verb: string | number; }) {
     let config = this.API_KEY + '&language=' + this.lang;
     let url = '';

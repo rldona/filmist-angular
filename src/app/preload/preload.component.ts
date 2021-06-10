@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 
 import * as firebase from 'firebase';
 
-import { FirebaseService } from '../firebase.service';
-import { DbmoviesService } from '../dbmovies.service';
+import { FirebaseService } from '../../services/firebase.service';
+import { DbmoviesService } from '../../services/dbmovies.service';
 
 @Component({
   selector: 'fm-preload',

@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { DbmoviesService } from '../dbmovies.service';
-import { ScreenService } from '../screen.service';
+import { DbmoviesService } from '../../services/dbmovies.service';
+import { ScreenService } from '../../services/screen.service';
 
 @Component({
   selector: 'fm-movie-item',
