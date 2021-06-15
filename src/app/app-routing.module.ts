@@ -4,20 +4,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DetailComponent } from './detail/detail.component';
 import { SearchComponent } from './search/search.component';
-import { TopListComponent } from './top-list/top-list.component';
 import { GenresComponent } from './genres/genres.component';
+import { FavoritesComponent } from './favorites/favorites.component';
+import { TopListComponent } from './top-list/top-list.component';
 import { VideoGenreComponent } from './video-genre/video-genre.component';
 import { ActorDetailComponent } from './actor-detail/actor-detail.component';
 
+import { PreloadComponent } from './preload/preload.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RememberComponent } from './remember/remember.component';
-import { PreloadComponent } from './preload/preload.component';
 
 import { HomeResolve } from './home/home.resolve';
-import { FavoritesComponent } from './favorites/favorites.component';
-import { SearchResolve } from './search/search.resolve';
 import { DetailResolve } from './detail/detail.resolve';
+import { SearchResolve } from './search/search.resolve';
 import { GenresResolve } from './genres/genres.resolve';
 import { MovieGenreResolve } from './video-genre/video-genre.resolve';
 import { ActorDetailResolve } from './actor-detail/actor-detail.resolve';
@@ -27,6 +27,11 @@ import { LoggedInGuard } from './shared/logged-in-guard/logged-in-guard';
 const routes: Routes = [
 
   { path: '', redirectTo: 'lists', pathMatch: 'full' },
+
+  {
+    path: 'preload',
+    component: PreloadComponent
+  },
 
   {
     path: 'login',
@@ -47,11 +52,6 @@ const routes: Routes = [
   },
 
   {
-    path: 'preload',
-    component: PreloadComponent
-  },
-
-  {
     path: 'lists',
     component: HomeComponent,
     resolve: {
@@ -65,10 +65,10 @@ const routes: Routes = [
   },
 
   {
-    path: 'top-list/:collection',
-    component: TopListComponent,
+    path: 'genres',
+    component: GenresComponent,
     resolve: {
-      home: HomeResolve
+      genres: GenresResolve
     }
   },
 
@@ -81,18 +81,18 @@ const routes: Routes = [
   },
 
   {
-    path: 'movies/:id',
-    component: DetailComponent,
+    path: 'top-list/:collection',
+    component: TopListComponent,
     resolve: {
-      detail: DetailResolve
+      home: HomeResolve
     }
   },
 
   {
-    path: 'genres',
-    component: GenresComponent,
+    path: 'movies/:id',
+    component: DetailComponent,
     resolve: {
-      genres: GenresResolve
+      detail: DetailResolve
     }
   },
 
